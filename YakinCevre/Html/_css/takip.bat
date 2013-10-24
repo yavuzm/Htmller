@@ -1,0 +1,1 @@
+sass --watch \\192.168.1.100\wwwroot\YakinCevre\Html\_css\yakincevre.scss --style compact

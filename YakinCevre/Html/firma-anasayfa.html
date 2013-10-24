@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Yakın Çevre</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="_css/normalize.min.css">
+        <link rel="stylesheet" href="_css/font.css">
+         <link rel="stylesheet" href="_css/chosen.css">
+         <link rel="stylesheet" href="_css/prettyCheckboxes.css">
+         <link rel="stylesheet" href="_js/lib/source/jquery.fancybox.css">
+        <link rel="stylesheet" href="_css/yakincevre.css">
+        
+        <script type="text/javascript" src="_js/lib/modernizr-2.6.2.min.js">//</script>
+  		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="_js/maps.js"></script>
+		<script src="_js/add_pin.js"></script> 
+		
+		<script type="text/javascript">
+		  Modernizr.load({
+		    test: Modernizr.cssgradients || Modernizr.borderradius || Modernizr.boxshadow,
+		    nope: '_js/lib/PIE.js'
+		  });
+		</script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!--HEADER-->
+    <div class="header_top clearfix">
+    	<div class="wrapper clearfix">
+	        <div class="top_nav">
+            	<ul>
+	            	<li><a href="javascript:;" title="ENGLISH">ENGLISH</a></li>
+	                <li><a href="javascript:;" title="HAKKIMIZDA">HAKKIMIZDA</a></li>
+	                <li><a href="javascript:;" title="İLETİŞİM">İLETİŞİM</a></li>
+	                <li><a href="javascript:;" title="YARDIM">YARDIM</a></li>
+	                <li><a href="javascript:;" title="SSS">SSS</a></li>
+	            </ul>
+            </div>
+        	<div class="user_login">
+            	<div class="clearfix"><p>Merhaba, <a href="javascript:;">giriş yapmak</a> veya <a href="javascript:;">üye olmak</a> ister misin?</p></div>
+            </div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="header_bottom clearfix">
+    	<div class="wrapper clearfix">
+	        <ul>
+	            <li class="firm"><a href="javascript:;" title="FİRMA" class="active">FİRMA</a></li>
+	            <li class="campaign"><a href="javascript:;" title="KAMPANYA">KAMPANYA</a></li>
+	            <li class="advertising"><a href="javascript:;" title="İLAN">İLAN</a></li>
+	            <li class="product"><a href="javascript:;" title="ÜRÜN/HİZMET">ÜRÜN/HİZMET</a></li>
+	            <li class="article"><a href="javascript:;" title="MAKALE">MAKALE</a></li>
+	        </ul>
+	        <a href="javascript:;" class="logo"></a>
+        </div>
+    </div>
+    <!--HEADER-->
+    
+    <!--SEARCH--> 
+    	<div class="subpage base_search clearfix">
+        	<div class="wrapper clearfix">
+	            <div class="search">
+	            	<div class="whereis">
+                    	<input type="text" placeholder="Nerede?" autocomplete="off">
+                        <input type="button">
+                    </div>
+	                <div class="type_box">
+	                	<input type="text" name="main_search" id="main_search" placeholder="Gözleme, Boğaz Turu, Starbucks..." autocomplete="off">
+	                </div>
+	                <div class="type_button">
+	                	<a href="javascript:;" title="Arama"></a>
+	                </div>
+	                
+	            </div> 
+            </div>
+        </div>        
+    <!--SEARCH--> 
+    
+   
+    
+    
+    <!--SEARCH RESULT-->
+    <div class="subpage_header_container clearfix">
+    	<div class="wrapper">
+        	<div class="header clearfix">
+            	<div class="top">
+                	<!--<a href="javascript:;" class="btn_add_new_firm"></a>-->
+                    <div class="top_scrolling_btn">
+                    	<ul>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn.png" alt="Yeni Firma Ekle"></a></li>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn_2.png" alt="Yeni Firma Ekle"></a></li>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn.png" alt="Yeni Firma Ekle"></a></li>
+                    	</ul>
+                    </div>
+                    <div class="results_text">
+                    	<!--<div class="label">Sonuçlar :</div>-->
+                        <div class="result">İstanbul, Bakırköy'deki firmalar</div>
+                    </div>
+                    
+                </div>
+                <div class="bottom">
+                	<div class="bread_crumb">
+                    	<ul class="clearfix">
+                        	<li><a href="javascript:;" title="Anasayfa">Anasayfa</a></li>
+                            <li><a href="javascript:;" title="Firma">Firma</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="top_firm_control">
+                    	<a href="javascript:;" class="prev">Geri</a>
+                        <a href="javascript:;" class="next">Daha Fazla</a>
+                    </div>
+                                        
+                </div>
+            </div>
+            
+            
+            <div class="top_firms clearfix">
+            <ul class="clearfix" id="top_firms">
+            	<li><div class="block">
+                	<div class="label">RESTORAN</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_00.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">ALIŞVERİŞ</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_01.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">GÜZELLİK+SPA</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_02.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">EVCİL HAYVANLAR</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_03.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">SANAT</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_04.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">RESTORAN</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_00.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">ALIŞVERİŞ</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_01.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">GÜZELLİK+SPA</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_02.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">EVCİL HAYVANLAR</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_03.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+                <li><div class="block">
+                	<div class="label">SANAT</div>
+                    <div class="img_box">
+                    	<img src="_img/img_top_firm_04.png" alt="">
+                    </div>
+                    <ol>
+                    	<li><a href="javascript:;">StarBucks Coffee</a></li>
+                        <li><a href="javascript:;">Mc Donald’S</a></li>
+                        <li><a href="javascript:;">Burger King</a></li>
+                        <li><a href="javascript:;">KFC</a></li>
+                        <li><a href="javascript:;">Sbarro</a></li>
+                    </ol>
+                    <a href="javascript:;" class="btn btn_black">Hepsi</a>
+                </div></li>
+             </ul>
+            </div>
+                       
+        	
+            </div>
+        </div>
+    </div>
+    <!--SEARCH RESULT-->
+    
+    
+        <!--SLIDER-->
+    <div class="base_slider firma_anasayfa clearfix">
+    	<div class="wrapper clearfix">
+            	<div class="slider_container">
+                <img src="_img/bnr_01.png" alt="Mekan Rehberi YAKINÇEVRE">
+                <img src="_img/bnr_01.png" alt="Mekan Rehberi YAKINÇEVRE">  
+                <img src="_img/bnr_01.png" alt="Mekan Rehberi YAKINÇEVRE">  
+                <img src="_img/bnr_01.png" alt="Mekan Rehberi YAKINÇEVRE">  
+                <img src="_img/bnr_01.png" alt="Mekan Rehberi YAKINÇEVRE">                  
+                </div>
+                <div class="popular_searches clearfix">
+		        	<div class="label">Popüler Aramalar</div>
+		            <!--<div class="control">
+		            	<a href="javascript:;" title="Prev"></a>
+		                <a href="javascript:;" title="Next"></a>
+		           	</div>-->
+		            <div class="anim_container">
+		                	<div class="mask_left"></div>
+		                    <div class="mask_right"></div>
+		                		<ul class="newsticker_scroll_search">
+	  		                    	<li><a href="javascript:;" title="Starbucks"><span>Starbucks</span></a></li>
+	  		                        <li><a href="javascript:;" title="Nevizade"><span>Nevizade</span></a></li>
+	  		                        <li><a href="javascript:;" title="Brunch"><span>Brunch</span></a></li>
+	  		                        <li><a href="javascript:;" title="Çökertme Kebab"><span>Çökertme Kebab</span></a></li>
+	  		                        <li><a href="javascript:;" title="Sahil Kenarı"><span>Sahil Kenarı</span></a></li>
+	  		                        <li><a href="javascript:;" title="Boğaz Turu"><span>Boğaz Turu</span></a></li>
+                                    <li><a href="javascript:;" title="Starbucks"><span>Starbucks</span></a></li>
+	  		                        <li><a href="javascript:;" title="Nevizade"><span>Nevizade</span></a></li>
+	  		                        <li><a href="javascript:;" title="Brunch"><span>Brunch</span></a></li>
+	  		                        <li><a href="javascript:;" title="Çökertme Kebab"><span>Çökertme Kebab</span></a></li>
+	  		                        <li><a href="javascript:;" title="Sahil Kenarı"><span>Sahil Kenarı</span></a></li>
+	  		                        <li><a href="javascript:;" title="Boğaz Turu"><span>Boğaz Turu</span></a></li>
+	  		                    </ul>
+		                </div>
+		        </div>
+        </div>
+    </div>
+    <!--SLIDER--> 
+    
+    <!--POPULAR-->
+    <div class="base_popular clearfix">
+    	<div class="wrapper clearfix">
+        	<!--Popular Campaign Start-->
+            	<div class="box" id="campaign">
+                	<h2>Popüler Kampanyalar</h2>
+                    <div class="inner">
+                    	<ul>
+                        	<li data-link="javascript:;">
+                            	<div class="img_box">
+                                	<img src="_img/icon/green/icn_1.png" alt="">
+                                    <img src="_img/icon/white/icn_1.png" alt="">
+                                </div>
+                            <p>Little Ceasers
+                            	<span>— 1 Pizza Alana 2.’si Bedava</span>                            	
+                            </p>
+                            <p class="price">30<sup>TL</sup></p>
+                            	<div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            <li data-link="javascript:;">
+                            	<div class="img_box">
+                                	<img src="_img/icon/green/icn_2.png" alt="">
+                                    <img src="_img/icon/white/icn_2.png" alt="">
+                                </div>
+                            <p>JW Marriot Club
+                            	<span>— 1 Aylık Spa </span>                            	
+                            </p>
+                            <p class="price">650<sup>TL</sup></p>
+                           		 <div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            
+                            <li data-link="javascript:;">
+                            	<div class="img_box">
+                                	<img src="_img/icon/green/icn_3.png" alt="">
+                                    <img src="_img/icon/white/icn_3.png" alt="">
+                                </div>
+                            <p>House Cafe
+                            	<span>— 2 Kişilik Akşam Yemeği</span>                            	
+                            </p>
+                            <p class="price">110<sup>TL</sup></p>
+                            	<div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            
+                        </ul>
+                        <a href="javascript:;" class="btn btn_blue btn_go" title="KAMPANYALAR">KAMPANYALAR</a>
+                    	<a href="javascript:;" class="btn btn_blue btn_add" title="KAMPANYA EKLE">KAMPANYA EKLE</a>
+                    </div>
+                    
+                </div>
+            <!--Popular Campaign End-->
+            
+            <!--Popular Ad Start-->
+            	<div class="box" id="ad">
+                	<h2>Popüler İlanlar</h2>
+                    <div class="inner">
+                    	<ul>
+                        	<li data-link="javascript:;">
+                                	<div class="img_box">
+                                		<img src="_img/icon/white/icn_4.png" alt="">
+                                    	<img src="_img/icon/green/icn_4.png" alt="">
+                                	</div>
+                                <p>Temiz 2. El Bisiklet
+	                            	<span>— Efe Balun</span>                            	
+	                            </p>
+	                            <p class="price">250<sup>TL</sup></p>
+                                <div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            <li data-link="javascript:;">
+	                            <div class="img_box">
+                                		<img src="_img/icon/white/icn_5.png" alt="">
+                                    	<img src="_img/icon/green/icn_5.png" alt="">
+                                	</div>
+	                            <p>Elektro Gitar
+	                            	<span>— Mustafa Özdamarlar</span>                            	
+	                            </p>
+	                            <p class="price">700<sup>TL</sup></p>
+                                <div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            <li data-link="javascript:;">
+	                            <div class="img_box">
+                                		<img src="_img/icon/white/icn_6.png" alt="">
+                                    	<img src="_img/icon/green/icn_6.png" alt="">
+                                	</div>
+	                            <p>iPhone 4S Temiz
+	                            	<span>— Ercan Akkaya</span>                            	
+	                            </p>
+	                            <p class="price">425<sup>TL</sup></p>
+                                <div class="social">
+                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    <a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+                                </div>
+                            </li>
+                            
+                            
+                        </ul>
+                        <a href="javascript:;" class="btn btn_green btn_go" title="TÜM İLANLAR">TÜM İLANLAR</a>
+                    	<a href="javascript:;" class="btn btn_green btn_add" title="YENİ İLAN VER">YENİ İLAN VER</a>
+                    </div>
+                    
+                </div>
+            <!--Popular Ad End-->
+            
+            <!--Popular Product Start-->
+            	<div class="box" id="product">
+                	<h2>Popüler Ürün/Hizmet</h2>
+                    <div class="inner">
+                    	<ul>
+                        	<li data-link="javascript:;" class="acik">
+	                            <div class="img_box">
+                                	<img src="_img/icon/green/icn_3.png" alt="">
+                                    <img src="_img/icon/white/icn_3.png" alt="">
+                                </div>
+	                            <p>Double Espresso
+	                            	<span>— Starbucks</span>                            	
+	                            </p>
+	                            <p class="price">250<sup>TL</sup></p>
+	                            	<div class="social">
+	                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    	<a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+	                                </div>
+                            </li>
+                            
+                            <li data-link="javascript:;">
+	                            <div class="img_box">
+                                	<img src="_img/icon/green/icn_6.png" alt="">
+                                    <img src="_img/icon/white/icn_6.png" alt="">
+                                </div>
+	                            <p>İndirimli Kontür
+	                            	<span>— Turkcell</span>                            	
+	                            </p>
+	                            <p class="price">15<sup>TL</sup></p>
+	                           		 <div class="social">
+	                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    	<a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+	                                </div>
+                            </li>
+                            
+                            
+                            <li data-link="javascript:;">
+	                            <div class="img_box">
+                                	<img src="_img/icon/green/icn_7.png" alt="">
+                                    <img src="_img/icon/white/icn_7.png" alt="">
+                                </div>
+	                            <p>Boğaz Turu
+	                            	<span>— Ercan Turizm</span>                            	
+	                            </p>
+	                            <p class="price">125<sup>TL</sup></p>
+	                            	<div class="social">
+	                                	<a href="javascript:;" class="btn btn_black btn_hlike">Beğen</a>
+                                    	<a href="javascript:;" class="btn btn_black btn_share">Paylaş</a>
+	                                </div>
+                            </li>
+                            
+                            
+                        </ul>
+                        <a href="javascript:;" class="btn btn_blue btn_go" title="TÜM ÜRÜNLER">TÜM ÜRÜNLER</a>
+                    	<a href="javascript:;" class="btn btn_blue btn_add" title="ÜRÜN/HİZMET EKLE">ÜRÜN/HİZMET EKLE</a>		
+                    </div>
+                    
+                </div>
+            <!--Popular Product End-->
+            
+            <div style="clear:both"></div>
+            
+            <div class="popular_firms clearfix">
+            	<div class="label">Popüler Firmalar</div>
+            	<!--<div class="control">
+            		<a href="javascript:;" title="Prev"></a>
+                	<a href="javascript:;" title="Next"></a>
+           		</div>-->
+            	<div class="anim_container">
+                	<div class="mask_left"></div>
+                    <div class="mask_right"></div>
+                    <a href="javascript:;" class="btn btn_white btn_add">FİRMA EKLE</a>
+                	<ul class="newsticker_scroll_firm">
+                        <li><a href="javascript:;" title="Mado"><span>Mado</span></a></li>
+                        <li><a href="javascript:;" title="LC Waikiki"><span>LC Waikiki</span></a></li>
+                        <li><a href="javascript:;" title="Kolcuoğlu"><span>Kolcuoğlu</span></a></li>
+                        <li><a href="javascript:;" title="Cinemaximum"><span>Cinemaximum</span></a></li>
+                        <li><a href="javascript:;" title="Bolulu Hasan Usta"><span>Bolulu Hasan Usta</span></a></li>
+                        <li><a href="javascript:;" title="Adidas"><span>Adidas</span></a></li>
+                        <li><a href="javascript:;" title="Mado"><span>Mado</span></a></li>
+                        <li><a href="javascript:;" title="LC Waikiki"><span>LC Waikiki</span></a></li>
+                        <li><a href="javascript:;" title="Kolcuoğlu"><span>Kolcuoğlu</span></a></li>
+                        <li><a href="javascript:;" title="Cinemaximum"><span>Cinemaximum</span></a></li>
+                        <li><a href="javascript:;" title="Bolulu Hasan Usta"><span>Bolulu Hasan Usta</span></a></li>
+                        <li><a href="javascript:;" title="Adidas"><span>Adidas</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <!--POPULAR--> 
+    
+    <!--POPULAR COMMENT-->
+    	<div class="base_popularcomment clearfix">
+        	<div class="wrapper clearfix">
+            	<div class="comments">
+                	<div class="bullets">
+                    	<!--<a href="javascript:;" class="selected"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>-->
+                    </div>
+                    <h2>Popüler Yorumlar</h2>
+                    
+                    <div class="comment_outer">
+                    <ul class="clearfix">
+                    	<li class="clearfix">
+                        	<div class="commenting">
+                            	<div class="usr_img">
+	                                <a href="javascript:;">
+	                                	<img src="_img/user_image.png" alt="Ercan Nailoğlu">
+	                                </a>
+                                </div>
+                                
+                                <div class="info">
+                                	<h2>Ercan Nailoğlu
+                                    	<span>Haziran 1,2013</span>
+                                    </h2>
+                                    <div class="status two_star"></div>
+                                </div>
+                                
+                                <div class="buttons">
+                                	<a href="javascript:;" title="Katıl" class="btn btn_green btn_like">Katıl</a>
+                                    <a href="javascript:;" title="Katılma" class="btn btn_green btn_unlike">Katılma</a>
+                                    <a href="javascript:;" title="Paylaş" class="btn btn_black btn_share">Paylaş</a>
+                                    <a href="javascript:;" title="Tüm Yorumlar" class="btn btn_blue btn_comments">TÜM YORUMLAR</a>
+                                    <a href="javascript:;" title="CEVAPLA" class="btn btn_blue btn_add">CEVAPLA</a>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="clearfix user_comment">
+                                	<p>9. katın kendine has aromatik esansını ciğerlere çekmeden ortamı terketmeyin.
+                                    Akşam saatlerinde burnu koku almayanları bile kendinden geçirebilir, yemek fişlerini kasaya vermeyi unutmayın.</p>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                        	<div class="commenting">
+                            	<div class="usr_img">
+	                                <a href="javascript:;">
+	                                	<img src="_img/user_image.png" alt="Ercan Nailoğlu">
+	                                </a>
+                                </div>
+                                
+                                <div class="info">
+                                	<h2>Ercan Nailoğlu
+                                    	<span>Haziran 1,2013</span>
+                                    </h2>
+                                    <div class="status two_star"></div>
+                                </div>
+                                
+                                <div class="buttons">
+                                	<a href="javascript:;" title="Katıl" class="btn btn_green btn_like">Katıl</a>
+                                    <a href="javascript:;" title="Katılma" class="btn btn_green btn_unlike">Katılma</a>
+                                    <a href="javascript:;" title="Paylaş" class="btn btn_black btn_share">Paylaş</a>
+                                    <a href="javascript:;" title="Tüm Yorumlar" class="btn btn_blue btn_comments">TÜM YORUMLAR</a>
+                                    <a href="javascript:;" title="CEVAPLA" class="btn btn_blue btn_add">CEVAPLA</a>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="clearfix user_comment">
+                                	<p>9. katın kendine has aromatik esansını ciğerlere çekmeden ortamı terketmeyin.
+                                    Akşam saatlerinde burnu koku almayanları bile kendinden geçirebilir, yemek fişlerini kasaya vermeyi unutmayın.</p>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                        	<div class="commenting">
+                            	<div class="usr_img">
+	                                <a href="javascript:;">
+	                                	<img src="_img/user_image.png" alt="Ercan Nailoğlu">
+	                                </a>
+                                </div>
+                                
+                                <div class="info">
+                                	<h2>Ercan Nailoğlu
+                                    	<span>Haziran 1,2013</span>
+                                    </h2>
+                                    <div class="status two_star"></div>
+                                </div>
+                                
+                                <div class="buttons">
+                                	<a href="javascript:;" title="Katıl" class="btn btn_green btn_like">Katıl</a>
+                                    <a href="javascript:;" title="Katılma" class="btn btn_green btn_unlike">Katılma</a>
+                                    <a href="javascript:;" title="Paylaş" class="btn btn_black btn_share">Paylaş</a>
+                                    <a href="javascript:;" title="Tüm Yorumlar" class="btn btn_blue btn_comments">TÜM YORUMLAR</a>
+                                    <a href="javascript:;" title="CEVAPLA" class="btn btn_blue btn_add">CEVAPLA</a>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="clearfix user_comment">
+                                	<p>9. katın kendine has aromatik esansını ciğerlere çekmeden ortamı terketmeyin.
+                                    Akşam saatlerinde burnu koku almayanları bile kendinden geçirebilir, yemek fişlerini kasaya vermeyi unutmayın.</p>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="Banner">
+                	<h2>Reklamlar</h2>
+                    <div class="inner">
+                    	<a href="javascript:;"><img src="_img/img_ad.png" alt="Reklam"></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>    
+    <!--POPULAR COMMENT-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--SOCIAL-->
+    	<div class="base_social clearfix">
+        	<div class="wrapper clearfix">
+            	<div class="social">
+                	<a href="javascript:;" title="Facebook" class="fb"></a>
+                    <a href="javascript:;" title="Twitter" class="tw"></a>
+                    <a href="javascript:;" title="Google Plus" class="gp"></a>
+                </div>
+                <a href="javascript:;" class="logo"></a>
+            </div>
+        </div>
+    <!--SOCIAL--> 
+    
+    <!--SITE MAP-->
+    <div class="base_sitemaps clearfix">
+    	<div class="wrapper clearfix">
+        	<div class="app">
+            	<a href="javascript:;"><img src="_img/btn_apple.png" alt=""></a>
+                <a href="javascript:;"><img src="_img/btn_google.png" alt=""></a>
+                <a href="javascript:;"><img src="_img/btn_blackberry.png" alt=""></a>
+            </div>
+            <ul>
+            <li class="firm"><a href="javascript:;" title="FİRMA">FİRMA</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="campaign"><a href="javascript:;" title="KAMPANYA">KAMPANYA</a>
+                <ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul> 
+           	</li>
+            <li class="advertising"><a href="javascript:;" title="İLAN">İLAN</a>
+            	 <ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="product"><a href="javascript:;" title="ÜRÜN/HİZMET">ÜRÜN/HİZMET</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="article"><a href="javascript:;" title="MAKALE">MAKALE</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+        	</ul>
+        </div>
+    </div>
+    <!--SITE MAP--> 
+    
+    <!--FOOTER-->
+    <div class="base_footer clearfix">
+		<div class="wrapper clearfix">
+        	<p>DESIGN AND TECHNOLOGY BY<a href="http://www.gricreative.com">GRI CREATIVE</a></p>
+        	<p class="copy">COPYRIGHT © 2013 YAKIN ÇEVRE</p>
+            <ul>
+            	<li><a href="javascript:;" title="">GİZLİLİK SÖZLEŞMESİ</a></li>
+				<li><a href="javascript:;" title="">kULLANIM KOSULLARI</a></li>
+				<li><a href="javascript:;" title="">GÖRÜŞLERİNİZ BİZİM İÇİN ÖNEMLİDİR <span>&hearts;</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--FOOTER-->
+         
+     <!--SCRIPTS-->
+     <script src="_js/lib/jquery-1.10.1.min.js"></script>
+     <script src="_js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+     <script src="_js/lib/jquery.easing.min.js"></script>
+     <script src="_js/lib/jquery.simpleWeather-2.1.2.min.js"></script>
+     <script src="_js/lib/jquery.slides.min.js"></script>   
+     <script src="_js/lib/newsticker.jquery.min.js"></script> 
+     <script src="_js/lib/source/jquery.fancybox.pack.js"></script>
+     <script src="_js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+     <script src="_js/lib/placeholder.js"></script> 
+     <script src="_js/lib/chosen.jquery.js"></script>
+     <script src="_js/lib/file-upload.js"></script>
+     <script src="_js/lib/prettyCheckboxes.js"></script>
+     <script src="_js/lib/thumb_rotator.js"></script>     
+     <script src="_js/yakincevre.js"></script>
+     <!--SCRIPTS-->     
+    </body>
+</html>

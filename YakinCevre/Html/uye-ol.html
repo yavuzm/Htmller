@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Yakın Çevre</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="_css/normalize.min.css">
+        <link rel="stylesheet" href="_css/font.css">
+         <link rel="stylesheet" href="_css/chosen.css">
+         <link rel="stylesheet" href="_css/prettyCheckboxes.css">
+         <link rel="stylesheet" href="_js/lib/source/jquery.fancybox.css">
+        <link rel="stylesheet" href="_css/yakincevre.css">
+        
+        <script type="text/javascript" src="_js/lib/modernizr-2.6.2.min.js">//</script>
+  		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="_js/maps.js"></script>
+		<script src="_js/add_pin.js"></script> 
+		
+		<script type="text/javascript">
+		  Modernizr.load({
+		    test: Modernizr.cssgradients || Modernizr.borderradius || Modernizr.boxshadow,
+		    nope: '_js/lib/PIE.js'
+		  });
+		</script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!--HEADER-->
+    <div class="header_top clearfix">
+    	<div class="wrapper clearfix">
+	        <div class="top_nav">
+            	<ul>
+	            	<li><a href="javascript:;" title="ENGLISH">ENGLISH</a></li>
+	                <li><a href="javascript:;" title="HAKKIMIZDA">HAKKIMIZDA</a></li>
+	                <li><a href="javascript:;" title="İLETİŞİM">İLETİŞİM</a></li>
+	                <li><a href="javascript:;" title="YARDIM">YARDIM</a></li>
+	                <li><a href="javascript:;" title="SSS">SSS</a></li>
+	            </ul>
+            </div>
+        	<div class="user_login">
+            	<div class="clearfix"><p>Merhaba, <a href="javascript:;">giriş yapmak</a> veya <a href="javascript:;">üye olmak</a> ister misin?</p></div>
+            </div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="header_bottom clearfix">
+    	<div class="wrapper clearfix">
+	        <ul>
+	            <li class="firm"><a href="javascript:;" title="FİRMA" class="active">FİRMA</a></li>
+	            <li class="campaign"><a href="javascript:;" title="KAMPANYA">KAMPANYA</a></li>
+	            <li class="advertising"><a href="javascript:;" title="İLAN">İLAN</a></li>
+	            <li class="product"><a href="javascript:;" title="ÜRÜN/HİZMET">ÜRÜN/HİZMET</a></li>
+	            <li class="article"><a href="javascript:;" title="MAKALE">MAKALE</a></li>
+	        </ul>
+	        <a href="javascript:;" class="logo"></a>
+        </div>
+    </div>
+    <!--HEADER-->
+    
+    <!--SEARCH--> 
+    	<div class="subpage base_search clearfix">
+        	<div class="wrapper clearfix">
+	            <div class="search">
+	            	<div class="whereis">
+                    	<input type="text" placeholder="Nerede?" autocomplete="off">
+                        <input type="button">
+                    </div>
+	                <div class="type_box">
+	                	<input type="text" name="main_search" id="main_search" placeholder="Gözleme, Boğaz Turu, Starbucks..." autocomplete="off">
+	                </div>
+	                <div class="type_button">
+	                	<a href="javascript:;" title="Arama"></a>
+	                </div>
+	                
+	            </div> 
+            </div>
+        </div>        
+    <!--SEARCH--> 
+    
+   
+    
+    
+    
+    <div class="subpage_header_container clearfix">
+    	<div class="wrapper">
+        	<div class="header clearfix">
+            	<div class="top">
+                	<!--<a href="javascript:;" class="btn_add_new_firm"></a>-->
+                    <div class="top_scrolling_btn">
+                    	<ul>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn.png" alt="Yeni Firma Ekle"></a></li>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn_2.png" alt="Yeni Firma Ekle"></a></li>
+                      		<li><a href="javascript:;"><img src="_img/img_yeni_btn.png" alt="Yeni Firma Ekle"></a></li>
+                    	</ul>
+                    </div>
+                    <div class="results_text">
+                    	<!--<div class="label">Sonuçlar :</div>-->
+                        <div class="result">Üye olarak çeşitli avantajlardan yararlanabilirsiniz</div>
+                    </div>
+                    
+                </div>
+                <div class="bottom">
+                	<div class="bread_crumb">
+                    	<ul class="clearfix">
+                        	<li><a href="javascript:;" title="Anasayfa">Anasayfa</a></li>
+                            <li><a href="javascript:;" title="Üye Ol">Üye Ol</a></li>
+                        </ul>
+                    </div>
+                                        
+                </div>
+            </div>
+            
+            
+            <!--REGISTER-->
+            <div class="register_box clearfix">
+            	<div class="right">
+                	<table cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td>
+                            <div class="logo">
+                            	<p>
+                                	<strong>Yakın Çevre</strong>
+                                    <em>Üyelik avantajları</em> neler?
+                                </p>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td><a href="javascript:;" class="btn social fb">Facebook ile bağlan</a></td>
+                        </tr>
+                        <tr>
+                        	<td><a href="javascript:;" class="btn social tw">Twitter ile bağlan</a></td>
+                        </tr>
+                        <tr>
+                        	<td><a href="javascript:;" class="btn social gp">Google Plus ile bağlan</a></td>
+                        </tr>
+                        <tr>
+                        	<td><a href="javascript:;" class="btn social oi">Open ID ile bağlan</a></td>
+                        </tr>
+                    </table>
+                </div>	
+                <div class="left">
+                	<table cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td valign="top"><label for="inp_name">AD</label></td>
+                            <td><input type="text" id="inp_name" name="inp_name"></td>
+                        </tr>
+                        <tr>
+                        	<td valign="top"><label for="inp_surname">SOYAD</label></td>
+                            <td><input type="text" id="inp_surname" name="inp_surname"></td>
+                        </tr>
+                        
+                             	<tr>
+                        	<td valign="top"><label for="eposta">E-POSTA</label></td>
+                            <td><input type="text" placeholder="e.n@yakincevre.com" id="eposta" name="eposta"></td>
+                        </tr>
+                        <tr>
+                        	<td valign="top"><label for="password">ŞİFRE</label></td>
+                            <td><input type="password" value="password" placeholder="password" id="password" name="password"></td>
+                               <tr>
+                        	<td valign="top"><label for="again_password">ŞİFRE</label></td>
+                            <td><input type="password" value="password" placeholder="password" id="again_password" name="again_password"></td>
+                        <tr>
+                        	<td></td>
+                            <td><p class="form_link"><a href="javascript:;" class="forgot_pass">Üyelik Sözleşmesi</a>okudum kabul ediyorum</p>
+                            <input type="checkbox" id="okudum" name="okudum" checked><label for="okudum"></label>
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td></td>
+                            <td><a href="javascript:;" class="btn">GÖNDER</a></td>
+                        </tr>
+                    </table>
+                </div>	
+            </div>
+            <!--REGISTER-->   
+        	
+            </div>
+        </div>
+    </div>
+   
+   
+    
+   
+   
+    
+    <!--SOCIAL-->
+    	<div class="base_social clearfix">
+        	<div class="wrapper clearfix">
+            	<div class="social">
+                	<a href="javascript:;" title="Facebook" class="fb"></a>
+                    <a href="javascript:;" title="Twitter" class="tw"></a>
+                    <a href="javascript:;" title="Google Plus" class="gp"></a>
+                </div>
+                <a href="javascript:;" class="logo"></a>
+            </div>
+        </div>
+    <!--SOCIAL--> 
+    
+    <!--SITE MAP-->
+    <div class="base_sitemaps clearfix">
+    	<div class="wrapper clearfix">
+        	<div class="app">
+            	<a href="javascript:;"><img src="_img/btn_apple.png" alt=""></a>
+                <a href="javascript:;"><img src="_img/btn_google.png" alt=""></a>
+                <a href="javascript:;"><img src="_img/btn_blackberry.png" alt=""></a>
+            </div>
+            <ul>
+            <li class="firm"><a href="javascript:;" title="FİRMA">FİRMA</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="campaign"><a href="javascript:;" title="KAMPANYA">KAMPANYA</a>
+                <ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul> 
+           	</li>
+            <li class="advertising"><a href="javascript:;" title="İLAN">İLAN</a>
+            	 <ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="product"><a href="javascript:;" title="ÜRÜN/HİZMET">ÜRÜN/HİZMET</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+            <li class="article"><a href="javascript:;" title="MAKALE">MAKALE</a>
+            	<ul>
+					<li><a href="javascript:;" title="">EXCEPTEUR SINT</a></li>
+					<li><a href="javascript:;" title="">OBCAECAT</a></li>
+					<li><a href="javascript:;" title="">CUPİDİTAT NON</a></li>
+					<li><a href="javascript:;" title="">PROIDENT</a></li>
+					<li><a href="javascript:;" title="">SUNT IN CULPA</a></li>
+					<li><a href="javascript:;" title="">QUI OFFICIA</a></li>
+					<li><a href="javascript:;" title="">DESERUNT</a></li>
+			  	</ul>
+            </li>
+        	</ul>
+        </div>
+    </div>
+    <!--SITE MAP--> 
+    
+    <!--FOOTER-->
+    <div class="base_footer clearfix">
+		<div class="wrapper clearfix">
+        	<p>DESIGN AND TECHNOLOGY BY<a href="http://www.gricreative.com">GRI CREATIVE</a></p>
+        	<p class="copy">COPYRIGHT © 2013 YAKIN ÇEVRE</p>
+            <ul>
+            	<li><a href="javascript:;" title="">GİZLİLİK SÖZLEŞMESİ</a></li>
+				<li><a href="javascript:;" title="">kULLANIM KOSULLARI</a></li>
+				<li><a href="javascript:;" title="">GÖRÜŞLERİNİZ BİZİM İÇİN ÖNEMLİDİR <span>&hearts;</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--FOOTER-->
+         
+     <!--SCRIPTS-->
+     <script src="_js/lib/jquery-1.10.1.min.js"></script>
+     <script src="_js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+     <script src="_js/lib/jquery.easing.min.js"></script>
+     <script src="_js/lib/jquery.simpleWeather-2.1.2.min.js"></script>
+     <script src="_js/lib/jquery.slides.min.js"></script>   
+     <script src="_js/lib/newsticker.jquery.min.js"></script> 
+     <script src="_js/lib/source/jquery.fancybox.pack.js"></script>
+     <script src="_js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+     <script src="_js/lib/placeholder.js"></script> 
+     <script src="_js/lib/chosen.jquery.js"></script>
+     <script src="_js/lib/file-upload.js"></script>
+     <script src="_js/lib/prettyCheckboxes.js"></script>
+     <script src="_js/lib/thumb_rotator.js"></script>     
+     <script src="_js/yakincevre.js"></script>
+     <!--SCRIPTS-->     
+    </body>
+</html>
